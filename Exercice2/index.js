@@ -9,3 +9,15 @@ console.log(calculate(8, 0, '/'));   // Affiche "Division by zero is not allowed
 console.log(calculate(4, 5, '%'));   // Affiche "Invalid operator"
 
 export default calculate
+
+function calculate(firstNumber, secondNumber, operator){
+    if (operator === "/" && secondNumber === 0) {
+        return "Division by zero is not allowed"
+    }
+    else if (["+", "-", "*", "/"].includes(operator)) {
+        return eval(firstNumber.toString() + operator + secondNumber.toString())
+    }
+    else {
+        return "Invalid operator"
+    }
+}
